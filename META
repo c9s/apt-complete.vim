@@ -14,3 +14,5 @@
 =repository git://....../
 
 =libpath        .
+
+=script_id      2925
