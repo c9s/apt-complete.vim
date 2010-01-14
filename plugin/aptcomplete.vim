@@ -2,7 +2,6 @@
 " Description: provide deb package name completion.
 " Version:  0.1
 " Author:  Cornelius
-
 let g:apt_cmd = 'apt-cache -n search '
 fun! AptComplete(findstart, base) "{{{
   if a:findstart
@@ -14,7 +13,18 @@ fun! AptComplete(findstart, base) "{{{
     return start
   else
     let list = system(printf('%s "^%s" | cut -d" " -f1 ',g:apt_cmd,a:base))
-    return split(list,"\n")
+    return sort(split(list,"\n"))
   endif
 endf "}}}
-setlocal omnifunc=AptComplete
+
+fun! s:Enable()
+  let s:old = &omnifunc
+  setlocal omnifunc=AptComplete
+endf
+
+fun! s:Disable()
+  exec 'setlocal omnifunc='.s:old
+endf
+
+com! AptCompleteOn :cal s:Enable()
+com! AptCompleteOff :cal s:Disable()
