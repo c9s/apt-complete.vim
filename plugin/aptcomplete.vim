@@ -19,11 +19,11 @@ endf "}}}
 
 fun! s:Enable()
   let s:old = &omnifunc
-  setlocal omnifunc=AptComplete
+  setlocal completefunc=AptComplete
 endf
 
 fun! s:Disable()
-  exec 'setlocal omnifunc='.s:old
+  exec 'setlocal completefunc='.s:old
 endf
 
 com! AptCompleteOn :cal s:Enable()
