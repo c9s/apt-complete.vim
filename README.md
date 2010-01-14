@@ -1,5 +1,4 @@
 
-
-APT-OMNI.vim
+apt-complete.vim
 ============
 provide deb package name completion.
