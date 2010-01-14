@@ -1,7 +1,7 @@
 
 apt-complete.vim
 ============
-provide apt package name completion.
+provide debian package name completion. depends on `apt-cache` command.
 
 
 commands:
