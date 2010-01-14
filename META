@@ -1,0 +1,14 @@
+
+=name           apt-complete.vim
+
+=author         Cornelius
+
+=email          cornelius.howl@gmail.com
+
+=type           plugin
+
+=version_from   plugin/aptcomplete.vim
+
+=vim_version    >= 7.2
+
+=repository git://....../
