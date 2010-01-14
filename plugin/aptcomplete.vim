@@ -3,7 +3,7 @@
 " Version:  0.1
 " Author:  Cornelius
 
-let apt_cmd = 'apt-cache -n search '
+let g:apt_cmd = 'apt-cache -n search '
 fun! AptComplete(findstart, base) "{{{
   if a:findstart
     let start = col('.') - 1
@@ -13,8 +13,8 @@ fun! AptComplete(findstart, base) "{{{
     endwhile
     return start
   else
-    let names = split(system(printf('%s "^%s" | cut -d" " -f1 ',apt_cmd,a:base)),"\n")
-    return names
+    let list = system(printf('%s "^%s" | cut -d" " -f1 ',g:apt_cmd,a:base))
+    return split(list,"\n")
   endif
 endf "}}}
 setlocal omnifunc=AptComplete
