@@ -34,7 +34,13 @@ fun! s:Toggle()
   endif
 endf
 
+fun! s:defopt(name,value)
+  if ! exists('a:name')
+    let {a:name} = a:value
+  endif
+endf
+cal s:defopt('g:EnableAptComplete',0)
+
 com! AptCompleteOn     :cal s:Enable()
 com! AptCompleteOff    :cal s:Disable()
 com! AptCompleteToggle :cal s:Toggle()
-
