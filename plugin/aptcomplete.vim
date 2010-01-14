@@ -27,7 +27,7 @@ fun! s:Disable()
 endf
 
 fun! s:Toggle()
-  if &omnifunc == 'AptComplete'
+  if &completefunc == 'AptComplete'
     cal s:Disable()
   else
     cal s:Enable()
