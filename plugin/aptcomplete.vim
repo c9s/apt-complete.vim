@@ -1,6 +1,6 @@
 " Plugin: apt-complete.vim
 " Description: provide deb package name completion.
-" Version: 0.11
+" Version: 0.12
 " Author:  Cornelius
 let g:apt_cmd = 'apt-cache -n search '
 fun! AptComplete(findstart, base) "{{{
